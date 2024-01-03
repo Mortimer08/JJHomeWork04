@@ -1,4 +1,4 @@
-package org.example;
+package org.example.models.Task01;
 
 import org.example.models.Course;
 

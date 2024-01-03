@@ -1,7 +1,10 @@
 package org.example.models;
 
+import javax.persistence.*;
 import java.util.Random;
 
+@Entity
+@Table(name = "courses")
 public class Course {
     private static final Random rnd = new Random();
     private static final String[] titles = new String[]{"History", "Physics", "Math", "Literature", "Chemistry", "Technology", "Biology"};
@@ -14,7 +17,7 @@ public class Course {
     public Course() {
     }
 
-    public Course(int id,  String title, int duration) {
+    public Course(int id, String title, int duration) {
         this.id = id;
         this.duration = duration;
         this.title = title;
@@ -58,8 +61,9 @@ public class Course {
         return title;
     }
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
-
     int duration;
     String title;
 
